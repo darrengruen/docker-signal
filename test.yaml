@@ -1,0 +1,20 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "Whoami"
+    command: "whoami"
+    expectedOutput: ["signal"]
+  - name: "which signal-desktop"
+    command: "which"
+    args: ["signal-desktop"]
+    expectedOutput: ['/usr/local/bin/signal-desktop']
+    # - name: "signal version"
+    # command: "signal-desktop"
+    # args: ["--version"]
+    # expectedOutput: ["1.24.2"]
+metadataTest:
+  cmd: []
+  entrypoint: ["signal-desktop"]
+  exposedPorts: []
+  volumes: ["/home/signal/.config/Signal"]
+  workdir: "/home/signal"
