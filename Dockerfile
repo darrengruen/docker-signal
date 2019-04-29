@@ -1,6 +1,6 @@
 FROM debian:buster
 
-"signal-desktop" ]
+ENTRYPOINT [ "signal-desktop" ]
 
 SHELL [ "/bin/bash", "-o", "pipefail", "-c" ]
 
