@@ -6,16 +6,16 @@ SHELL [ "/bin/bash", "-o", "pipefail", "-c" ]
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-  ca-certificates=20190110 \
-  curl=7.64.0-3 \
-  gnupg2=2.2.12-1 \
-  libgtk-3-0=3.24.5-1 \
-  libgtk-3-dev=3.24.5-1 \
+  ca-certificates \
+  curl \
+  gnupg2 \
+  libgtk-3-0 \
+  libgtk-3-dev \
   && curl -s https://updates.signal.org/desktop/apt/keys.asc | apt-key add - \
   && echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" \
   | tee -a /etc/apt/sources.list.d/signal-xenial.list \
   && apt-get update \
-  && apt-get install -y --no-install-recommends signal-desktop=1.24.1 \
+  && apt-get install -y --no-install-recommends signal-desktop \
   && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/* \
   && useradd -m signal
 
